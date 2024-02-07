@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/styles/Style.css">
+  <link href="/website/css/uicons-solid-rounded.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c6085e56b.js" crossorigin="anonymous"></script>
+  <title>Tabla de servicios</title>
+</head>
+<body>
+<div class="container mt-5">
+
+    <form action="/getApiData/2" method="post">
+        <div class="form-group">
+            <label for="apellidos">Devices ID:</label>
+            <input type="hidden" class="form-control"  id="IDG" name="IDG" value="0" >
+            <input type="number" class="form-control"  id="ID" name="ID" style="position: relative; width: 100px;" required maxlength="4">
+        </div>
+        <button type="submit" class="btn btn-primary" id="btnCreate">Crear</button>
+    </form>
+    
+    <br>
+    <br>
+
+    <div class="row">
+      <!-- Primer elemento -->
+      <div class="col-md-7">
+        <h2>Tabla de Datos - Domoticz - Alcanos</h2>
+      </div>
+      <!-- Segundo elemento -->
+      <div class="col-md-1">
+        <img src="../Assets/img/Domoticz.png"  class="Domoticz" style=" position: relative; right: 25px; width: 30px; height: 30px;"  alt="">
+      </div>
+    </div>
+  
+  <table class="table">
+    <thead>
+      <th scope="col ">IdDevices</th>
+       <th scope="col ">IDX</th>
+        <th scope="col">Name</th>
+        <th scope="col">HardwareName</th>
+        <th scope="col">Data</th>
+        <th scope="col">Battery Level</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí irán las filas de datos, puedes llenarlas dinámicamente con JavaScript o con los datos de tu base de datos -->
+      <%  if (data){ %>
+        <%  for(i=0; i<data.length; i++){%>
+          <tr>
+              <td><%=data[i].idDevices %></td>
+              <td><%=data[i].idx %></td>
+              <td><%=data[i].Name %></td>
+              <td><%=data[i].HardwareName %></td>
+              <td><%=data[i].Data %></td>
+              <td>
+                <div class="battery-container">
+                  <div class="battery-level" id="batteryLevel"></div>
+                  <div class="battery-text" id="batteryText"><%=data[i].BatteryLevel %></div>
+                </div>
+              </td>
+              <td><a  href="/devicesD/<%= data[i].idDevices %>/2/2" class="fa-solid fa-trash-can " style="color: #c71919e3;"></a> <a href="/apiC/devices_Info/<%= data[i].idDevices %>" style="position: relative; left: 30px; color: #1613d1b2;" class="fa-solid fa-circle-info" ></a></td>
+          </tr>
+      <%}} %>
+      <!-- Agrega más filas según sea necesario -->
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- Asegúrate de incluir la biblioteca Bootstrap JS y la biblioteca Popper.js (requerida por Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

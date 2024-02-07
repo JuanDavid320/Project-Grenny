@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+
+body {
+  background: #FFFFFF;
+  display: flex;
+
+}
+
+.nav {
+  width: 300px;
+  overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+  box-shadow: 5px 0px 5px rgba(0, 0, 0, 0.1); 
+  background: #c2c2c2;
+}
+
+.nav__link {
+  color: #303440;
+  display: block;
+  padding: 15px 0;
+  text-decoration: none;
+
+}
+
+.nav__link--inside {
+  border-radius: 6px;
+  padding-left: 20px;
+  text-align: left;
+}
+
+
+.nav__link--inside:hover {
+  background: rgb(214, 214, 214);
+
+
+}
+
+.list {
+  width: 100%;
+  height: 81vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background: #c2c2c2;
+  
+  margin: 0;
+  padding: 0;
+  
+}
+
+.list__item {
+  position: relative;
+  top: -100px;
+  list-style: none;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+.list__profile {
+  position: relative;
+  list-style: none;
+  width: 100%;
+  top: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.list__item--click {
+  cursor: pointer;
+}
+
+.list__button {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  width: 70%;
+  margin: 0 auto;
+
+}
+
+.arrow .list__arrow {
+
+  transform: rotate(90deg);
+
+}
+
+.list__arrow {
+  margin-left: auto;
+  transition: transform .3s;
+
+}
+
+.list__show {
+  width: 80%;
+  margin-left: auto;
+  border-left: 2px solid #303440;
+  list-style: none;
+  transition: height .4s;
+  height: 0;
+}
+
+.img-profile {
+  width: 175px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+#welcome-text {
+  margin-bottom: 20px;
+}
+
+#content {
+  flex: 1;
+  max-width: 100%;
+  height: 99vh;
+  padding: 0;
+  margin-left: 8px;
+
+
+}
+
+#viewFrame {
+  width: 100%;
+  height: 100%;
+ /* O ajusta la altura según tus necesidades */
+  border: none; /* Elimina el borde del iframe si no es necesario */
+  
+}

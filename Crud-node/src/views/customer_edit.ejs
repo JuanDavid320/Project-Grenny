@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Editar Usuario</title>
+    <!-- Agrega los enlaces a los estilos de Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+    <link href="/website/css/uicons-solid-rounded.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c6085e56b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container mt-4">
+    <!-- Formulario -->
+    
+    <form action="/update/<%= data.id  %>" method="POST">
+        <div class="form-group">
+            <label for="nombres">Nombres:</label>
+            <input type="text" class="form-control" value="<%= data.nombres  %>"  id="nombres" name="nombres">
+        </div>
+        <div class="form-group">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" class="form-control"  value="<%= data.apellidos  %>" id="apellidos" name="apellidos">
+        </div>
+        <div class="form-group">
+            <label for="username">Nombre de Usuario:</label>
+            <input type="text" class="form-control" id="Nombre_usuario" value="<%= data.Nombre_usuario  %>" name="Nombre_usuario">
+        </div>
+        <div class="form-group">
+            <label for="direccion">Dirección:</label>
+            <input type="text" class="form-control" id="direccion" value="<%= data.direccion  %>" name="direccion">
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo:</label>
+            <input type="email" class="form-control" id="correo" value="<%= data.correo  %>"  name="correo">
+        </div>
+        <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="text" class="form-control" id="telefono"  value="<%= data.telefono  %>" name="telefono">
+        </div>
+        <button type="submit" class="btn btn-warning" id="btnEdit">Editar</button>
+    </form>
+    
+    
+</div>
+
+<!-- Agrega los scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

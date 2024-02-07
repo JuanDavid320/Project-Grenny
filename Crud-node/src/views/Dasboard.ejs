@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <title>Menu</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap y Bootswatch -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/styles/StyleD.css">
+  <link rel="icon" href="/assets/img/config.ico" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/4c6085e56b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+     
+  <nav class="nav">
+    <div class="list__profile" style="position: relative;   top: 50px;">
+      <img src="/assets/img/149071.png" class="img-profile" alt="Foto de perfil">
+      <div id="welcome-text">
+        <p>Bienvenido Usuario</p>
+      </div>
+    </div>
+    <ul class="list">
+      <li class="list__item list__item--click ">
+        <div class="list__button list__button--click">
+          <a href="#" class="nav__link">
+            <i class="fas fa-cogs"></i> Devices</a><img src="/assets/img/arrow-right-solid.svg" class="list__arrow"
+            alt="">
+        </div>
+        <ul class="list__show">
+
+          <li class="list__inside">
+            <a href="#" class="nav__link nav__link--inside" onclick="loadView('devicesAll')">
+              <i class="fa-solid fa-border-all"></i><!-- Icono de configuración --> All devices</a>
+          </li>
+
+          <li class="list__inside">
+            <a href="#" class="nav__link nav__link--inside" onclick="loadView('devices')">
+              <i class="fa-solid fa-l"></i><!-- Icono de configuración --> Devices LoRa</a>
+          </li>
+          <li class="list__inside">
+            <a href="#" class="nav__link nav__link--inside" onclick="loadView('devicesC')">
+              <i class="fa-solid fa-globe"></i><!-- Icono de configuración --> Devices Concha</a>
+          </li>
+          <li class="list__inside">
+            <a href="#" class="nav__link nav__link--inside" onclick="loadView('devicesM')">
+              <i class="fa-solid fa-m"></i><!-- Icono de configuración --> Devices Milesight</a>
+          </li>
+
+        </ul>
+
+
+      </li>
+
+    </ul>
+  </nav>
+
+  
+ <div id="content">
+  <iframe id="viewFrame" width="100%" src="" height="100%" frameborder="0"></iframe>
+</div>
+  <!-- Agregando Bootstrap y Font Awesome para los iconos -->
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.js"></script>
+  <script>
+    function loadView(view) {
+      if (view == "devices") {
+        view = 'http://localhost:9000/1';
+      }
+      if (view == "devicesC") {
+        view = 'http://localhost:9000/2';
+      }
+      if (view == "devicesM") {
+        view = 'http://localhost:9000/3';
+      }
+
+      if (view == "devicesAll") {
+        view = 'http://localhost:9000/4';
+      }
+
+      document.getElementById('viewFrame').src = view;
+    }
+  </script>
+</body>
+
+</html>

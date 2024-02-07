@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/styles/Style.css">
+  <link href="/website/css/uicons-solid-rounded.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4c6085e56b.js" crossorigin="anonymous"></script>
+  <title>Tabla de servicios</title>
+</head>
+<body>
+<div class="container mt-5">
+
+  <div class="row">
+    <!-- Primer elemento -->
+    <div class="col-md-6">
+      <h2>Tabla de Datos - Milesight</h2>
+    </div>
+    <!-- Segundo elemento -->
+    <div class="col-md-1">
+      <img src="/assets/img/Milesight.png" class="Milesight"  style=" position: relative; right: 100px; width: 75px; height: 25px;"  alt="">
+    </div>
+  </div>
+  <table class="table">
+    <thead>
+      <th scope="col">Id Devices</th>
+      <th scope="col">Data-1</th>
+      <th scope="col ">Data-2</th>
+       <th scope="col ">Data-3</th>
+        <th scope="col">Data-4</th>   
+        <th scope="col">Action</th> 
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Aquí irán las filas de datos, puedes llenarlas dinámicamente con JavaScript o con los datos de tu base de datos -->
+      <%  if (data){ %>
+        <%  for(i=0; i<data.length; i++){%>
+          <tr>
+                             <td><%=data[i].idDevices%></td>
+              <td><%=   data[i].Data1[0] %> - <%=data[i].Data1[1]%></td>
+              <td><%=   data[i].Data2[0] %> - <%=data[i].Data2[1]%></td>
+              <td><%=   data[i].Data3[0] %> - <%=data[i].Data3[1]%></td>
+              <td><%=   data[i].Data4[0] %> - <%=data[i].Data4[1]%></td>
+              <td> <a href="/apiM/get/<%=data[i].idDevices%>" style="position: relative; left: 20px; color: #1613d1b2;" class="fa-solid fa-circle-info" ></a></td>
+    
+          </tr>
+      <%}} %>
+      <!-- Agrega más filas según sea necesario -->
+    </tbody>
+  </table>
+</div>
+</div>
+
+<!-- Asegúrate de incluir la biblioteca Bootstrap JS y la biblioteca Popper.js (requerida por Bootstrap) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

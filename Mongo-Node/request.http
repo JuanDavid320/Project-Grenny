@@ -1,0 +1,33 @@
+###
+POST https://172.16.16.176:8080/api/internal/login HTTP/1.1
+Content-Type: application/json
+
+
+
+{
+    "password": "password", 
+    "username": "apiuser"
+}
+###
+GET http://localhost:9000/api/ HTTP/1.1
+
+###
+GET http://localhost:9000/api/devices/6570a5a3d97e387b753e31e5 HTTP/1.1
+###
+PUT  http://localhost:9000/api/devices/6570c603c59245abb99a71c7 HTTP/1.1
+Content-Type: application/json
+
+
+{
+"HardwareID": "11",
+"HardwareName": "PRA",
+"Data": "12234234"
+
+}
+###
+DELETE  http://localhost:9000/api/devicesD/6570c603c59245abb99a71c7 HTTP/1.1
+
+###
+GET  url HTTP/1.1
+
+content  http://localhost:9000/api/getApiData HTTP/1.1
